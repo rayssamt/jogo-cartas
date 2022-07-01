@@ -17,26 +17,21 @@ const Game = ({ route }) => {
     const get = async () => {
       const deck = await getCards(deckId, 3);
       setCards(deck);
-
-      //console.log(deck)
     };
     get();
   }, []);
 
   const verificar = () => {
-    
-     const rei = cards && cards.cards.some((card) => 
-      {return card.value === "KING" })
 
-      const ace = cards && cards.cards.some((card) => 
-      {return card.value === "ACE" })
+    const king = cards && cards.cards.some((card) => { return card.value === "KING" })
 
-      
+    const ace = cards && cards.cards.some((card) => { return card.value === "ACE" })
+
     if (king && ace) {
       return alert("You almost tricked me! But you lost!")
-    } //não está funcionando 
-    
-    if (rei) {
+    }
+
+    if (king) {
       return alert("Victory! You are the King now!")
     }
 

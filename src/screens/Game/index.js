@@ -46,7 +46,7 @@ const Game = ({ route }) => {
 
   setTimeout(function () {
     nav()
-  }, 3000);
+  }, 4000);
 
 
   return (

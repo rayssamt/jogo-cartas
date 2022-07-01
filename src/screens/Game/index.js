@@ -24,23 +24,24 @@ const Game = ({ route }) => {
   }, []);
 
   const verificar = () => {
-    {
-      cards && cards.cards.map((card) => {
+    
+     const rei = cards && cards.cards.some((card) => 
+      {return card.value === "KING" })
 
-        if (card.value === "KING" && card.value === "ACE") {
-          return alert("You almost tricked me! But you lost!")
-        } //não está funcionando 
-        
-        if (card.value === "KING") {
-          return alert("Victory! You are the King now!")
-        }
+      const ace = cards && cards.cards.some((card) => 
+      {return card.value === "ACE" })
 
-        if (card.value === "ACE") {
-          return alert("HAHAHA Got you!")
-        }
-     
-      })
+      
+    if (king && ace) {
+      return alert("You almost tricked me! But you lost!")
+    } //não está funcionando 
+    
+    if (rei) {
+      return alert("Victory! You are the King now!")
+    }
 
+    if (ace) {
+      return alert("HAHAHA Got you!")
     }
   }
 
